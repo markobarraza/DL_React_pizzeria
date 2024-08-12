@@ -3,6 +3,8 @@ import Header from './components/Header';
 import Navbar from './components/Navbar'
 import Home from './components/Home';
 import Footer from './components/Footer';
+import Login from './components/Login'
+import Register from './components/Register';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
@@ -12,7 +14,9 @@ function App() {
     <>
       <Navbar/>  
       <Header/>  
-      <Home/>  
+      {/* <Home/>   */}
+      {/* <Register/>   */}
+      <Login/>  
       <Footer/>  
     </>
   )
