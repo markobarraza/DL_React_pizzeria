@@ -1,11 +1,14 @@
 
+import Home from './components/Home';
+// import Login from './components/Login'
+// import Register from './components/Register';
 import Header from './components/Header';
 import Navbar from './components/Navbar'
-import Home from './components/Home';
 import Footer from './components/Footer';
-import Login from './components/Login'
-import Register from './components/Register';
+import productos from './pizzas.json'
+import Cart from './components/Cart';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   
@@ -13,10 +16,11 @@ function App() {
   return (
     <>
       <Navbar/>  
-      <Header/>  
-      {/* <Home/>   */}
+      <Header/>
+      <Cart productos={productos}/>
+      {/* <Home productos={productos}/>   */}
       {/* <Register/>   */}
-      <Login/>  
+      {/* <Login/>   */}
       <Footer/>  
     </>
   )

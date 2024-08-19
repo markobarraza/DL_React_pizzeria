@@ -1,4 +1,4 @@
 export const miles = (number)=>{
-    return number.toLocaleString("es-ES")
+    return number.toLocaleString("nl-NL")
 }
 
