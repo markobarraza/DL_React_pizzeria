@@ -5,7 +5,7 @@ function CardPizza( {productos} ) {
   return (
     <>
       
-          <div className="card col-3 m-2 p-0">
+          <div key={productos.id} className="card col-3 m-2 p-0">
             <img src={productos.img} className="card-img-top" alt="..."/>
             <div className="card-body">
               <h5 className="card-title">Pizza {productos.name}</h5>

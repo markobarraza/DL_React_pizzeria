@@ -5,7 +5,8 @@ import Home from './components/Home';
 import Header from './components/Header';
 import Navbar from './components/Navbar'
 import Footer from './components/Footer';
-import productos from './pizzas.json'
+import Pizza from './components/Pizza';
+// import productos from './pizzas.json'
 import Cart from './components/Cart';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -17,8 +18,9 @@ function App() {
     <>
       <Navbar/>  
       <Header/>
-      <Cart productos={productos}/>
-      {/* <Home productos={productos}/>   */}
+      {/* <Cart productos={productos}/> */}
+      {/* <Home/>   */}
+      <Pizza/>
       {/* <Register/>   */}
       {/* <Login/>   */}
       <Footer/>  
