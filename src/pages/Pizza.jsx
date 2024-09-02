@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect, useState } from 'react';
-import CardPizza from './CardPizza';
+import CardPizza from '../components/CardPizza';
 
 const Pizza = () => {
     

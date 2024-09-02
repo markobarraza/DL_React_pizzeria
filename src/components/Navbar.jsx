@@ -1,5 +1,6 @@
 import React from 'react'
 import { miles } from '../utils/number'
+import { Link } from 'react-router-dom';
 
 function Navbar() {
     const total = 25000;
@@ -8,7 +9,7 @@ function Navbar() {
     <div>
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container">
-            <a className="navbar-brand" href="#">Home</a>
+            <Link className="navbar-brand" to="/">Home </Link>
             <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
             </button>
@@ -17,19 +18,21 @@ function Navbar() {
                 {
                     token ? (
                         <>
-                        <a className="nav-link active" aria-current="page" href="#">Profile</a>
-                        <a className="nav-link" href="#">Logout</a>
+                        <Link className="nav-link active" aria-current="page" to="/profile">Profile</Link>
+                        <Link className="nav-link" to="/logout">Logout</Link>
                         </>
                     ):(
                         <>
-                        <a className="nav-link" href="#">Login</a>
-                        <a className="nav-link" href="#">Register</a>
+                        <Link className="nav-link" to="/login">Login</Link>
+                        <Link className="nav-link" to="/register">Register</Link>
                         </>
                     )
                 }
+                <Link className="nav-link" to="/pizza">Pizza</Link>
+                <Link className="nav-link" to="/cart">Cart</Link>
             </div>
             </div>
-            <a className="nav-link justify-content-end" href="#">Total ${miles(total)} </a>
+            <Link className="nav-link justify-content-end" to="/cart">Total ${miles(total)} </Link>
         </div>
         </nav>
     </div>
