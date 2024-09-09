@@ -1,6 +1,9 @@
 import React from 'react'
+import { useContext } from 'react'
+import { CartContext } from '../context/CartContext'
 
 function CardPizza( {productos} ) {
+  const {incrementar, decrementar} = useContext(CartContext)
 
   return (
     <>
@@ -15,8 +18,8 @@ function CardPizza( {productos} ) {
               <li className="list-group-item">Precio: ${productos.price} </li>
             </ul>
             <div className="card-body">
-              <a href="#" className="card-link">Ver mas</a>
-              <a href="#" className="card-link">Añadir</a>
+            <button onClick={ ()=> incrementar(productos) } type="button" className="btn btn-success">Agregar</button>
+            <button onClick={ ()=> decrementar(productos) } type="button" className="btn btn-danger ms-2 ">Eliminar</button>
             </div>
           </div>
         

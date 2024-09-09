@@ -4,7 +4,7 @@ import CardPizza from '../components/CardPizza';
 
 const Pizza = () => {
     
-    const [pizza, setPizza] = useState([])
+    const [pizza, setPizza] = useState({})
     
     
     const consultarApi = async ()=>{
@@ -23,7 +23,7 @@ const Pizza = () => {
     
     <>
     <div className='my-5 row d-flex align-items-center justify-content-center'>
-        <CardPizza productos = {pizza} />
+        {pizza.id && <CardPizza productos = {pizza} />}
     </div>
     </>
   );

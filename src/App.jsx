@@ -11,6 +11,7 @@ import Cart from './pages/Cart';
 import Profile from './pages/Profile';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import productos from './pizzas.json'
+import CartProvider from './context/CartContext';
 
 
 function App() {
@@ -18,18 +19,19 @@ function App() {
 
   return (
     <>
-      <Navbar/>  
-      <Header/>
-
-      <Routes>
-        <Route path='/' element={<Home/>} />
-        <Route path='/cart' element={<Cart productos={productos}/>} />
-        <Route path='/pizza' element={<Pizza/>} />
-        <Route path='/register' element={<Register/>  } />
-        <Route path='/login' element={<Login/>} />
-        <Route path='/profile' element={<Profile/>} />
-      </Routes>
-      <Footer/>  
+      <CartProvider>
+        <Navbar/>  
+        <Header/>
+        <Routes>
+          <Route path='/' element={<Home/>} />
+          <Route path='/cart' element={<Cart productos={productos}/>} />
+          <Route path='/pizza' element={<Pizza/>} />
+          <Route path='/register' element={<Register/>  } />
+          <Route path='/login' element={<Login/>} />
+          <Route path='/profile' element={<Profile/>} />
+        </Routes>
+        <Footer/>  
+      </CartProvider>
     </>
   )
 }
