@@ -1,10 +1,19 @@
 import React from 'react'
 import { useContext } from 'react'
 import { CartContext } from '../context/CartContext'
+import { useNavigate } from 'react-router-dom';
+
 
 function CardPizza( {productos} ) {
-  const {incrementar, decrementar} = useContext(CartContext)
+  
+  const {incrementar, decrementar} = useContext(CartContext);
+  const navigate = useNavigate()
 
+  const irAPizza = (id)=> {
+    navigate(`/pizza/${id}`)
+  }
+  
+  
   return (
     <>
       
@@ -20,6 +29,7 @@ function CardPizza( {productos} ) {
             <div className="card-body">
             <button onClick={ ()=> incrementar(productos) } type="button" className="btn btn-success">Agregar</button>
             <button onClick={ ()=> decrementar(productos) } type="button" className="btn btn-danger ms-2 ">Eliminar</button>
+            <button onClick={ ()=> (irAPizza(`${productos.id}`)) } className='btn btn-info ms-2'> ver +</button>
             </div>
           </div>
         

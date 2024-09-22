@@ -2,10 +2,12 @@ import React from 'react'
 import { useContext } from 'react'
 import { CartContext } from '../context/CartContext'
 import { miles } from '../utils/number'
+import { UserContext } from '../context/UserContext';
 
 
 const Cart = ( {productos} ) => {
     const {carrito, total, totalPagar, incrementar, decrementar} = useContext(CartContext)
+    const {user} = useContext(UserContext)
 
     const obtenerCantidad = (producto) => {
         const itemEnCarrito = carrito.find((item) => item.id === producto.id);
@@ -41,6 +43,14 @@ const Cart = ( {productos} ) => {
                 </div>
             ))}
         </div>
+        {
+            user ? (
+                <button className= "d-flex justify-content-center btn col-3 my-3 btn-dark mx-auto">Pagar</button>
+            ) : (
+                <button className= "d-flex justify-content-center btn col-3 my-3 btn-dark mx-auto" disabled>Pagar</button>
+            )
+        }
+      
       </div>
       </>
   )
