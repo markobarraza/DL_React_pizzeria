@@ -6,6 +6,7 @@ import { UserContext } from '../context/UserContext';
 
 
 const Cart = ( {productos} ) => {
+
     const {carrito, total, totalPagar, incrementar, decrementar} = useContext(CartContext)
     const {user} = useContext(UserContext)
 
@@ -13,6 +14,22 @@ const Cart = ( {productos} ) => {
         const itemEnCarrito = carrito.find((item) => item.id === producto.id);
         return itemEnCarrito ? itemEnCarrito.count : 0;
     }
+
+    
+    const compraCart = async ()=> {
+        await fetch("http://localhost:5000/api/checkout", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token_jwt}`,
+            },
+                body: JSON.stringify({
+                cart: carrito,
+            }),
+        });
+    }
+
+    
 
     
 
